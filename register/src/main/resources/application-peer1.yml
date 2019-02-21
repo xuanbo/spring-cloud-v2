@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: register
+
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer2:8082/eureka/,http://peer3:8083/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
